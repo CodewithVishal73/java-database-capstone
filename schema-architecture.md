@@ -16,11 +16,6 @@ The **Online Smart Clinic Management System** is designed using a multi-tier arc
 - **Security**:  
   User authentication and role-based access control (RBAC) are implemented to ensure secure access to sensitive data. Encrypted communication and password hashing techniques are used.
 
-- **Data Flow**:  
-  1. Users interact with the frontend, sending requests to the backend.  
-  2. The backend processes these requests, applies business logic, and interacts with the database.  
-  3. Responses are sent back to the frontend, updating the user interface.
-
 This architecture supports seamless and secure online clinic operations.
 
 ---
@@ -55,5 +50,14 @@ The database schema for the Smart Clinic system includes the following key table
 - Mobile-friendly responsive design for patient and doctor access.
 
 ---
+## sec2. Data Flow and Control Steps
+
+1. A user (patient/doctor/admin) submits a request via the web interface.  
+2. The frontend captures the input and sends it to the backend RESTful API.  
+3. The backend validates the request and applies business logic.  
+4. If needed, the backend queries or updates the database (MySQL).  
+5. The database returns data to the backend.  
+6. The backend processes the response and sends it back to the frontend.  
+7. The frontend displays the updated information to the user.
 
 
