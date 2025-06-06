@@ -110,9 +110,11 @@ CREATE TABLE appointment (
     appointment_date DATE,
     appointment_time TIME,
     reason TEXT,
+    status TINYINT(1) NOT NULL DEFAULT 1,
     FOREIGN KEY (patient_id) REFERENCES patient(patient_id),
     FOREIGN KEY (doctor_id) REFERENCES doctor(doctor_id)
 );
+
 INSERT INTO appointment (appointment_time, status, doctor_id, patient_id) VALUES
 ('2025-05-01 09:00:00.000000', 0, 1, 1),
 ('2025-05-02 10:00:00.000000', 0, 1, 2),
