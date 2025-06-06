@@ -1,0 +1,156 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f6f8;
+}
+
+/* Layout */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading */
+.main-content h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Search and Filter Section */
+.search-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.search-filter input[type="text"],
+.search-filter input[type="date"],
+.search-filter button {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-filter button {
+  background-color: #015c5d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-filter button:hover {
+  background-color: #017d7e;
+}
+
+/* Table Styling */
+#patientTable {
+  width: 100%;
+  max-width: 1000px;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#patientTable thead {
+  background-color: rgba(1, 92, 93, 0.8);
+  color: #fff;
+}
+
+#patientTable thead th {
+  padding: 12px;
+  text-align: left;
+}
+
+#patientTable tbody td {
+  padding: 12px;
+  border-top: 1px solid #eee;
+}
+
+#patientTable tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#patientTable tbody tr:hover {
+  background-color: #e6f7f8;
+}
+
+/* Prescription Button */
+.prescription-btn {
+  background-color: #028585;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.prescription-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* No Records Message */
+.noPatientRecord {
+  font-style: italic;
+  color: #888;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px;
+  }
+
+  .search-filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #patientTable thead, #patientTable tbody, #patientTable th, #patientTable td {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .search-filter input,
+  .search-filter button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .prescription-btn {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+  }
+}

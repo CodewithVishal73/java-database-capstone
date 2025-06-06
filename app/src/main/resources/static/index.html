@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clinic Management - Select Role</title>
+  <link rel="icon" href="./assets/images/logo/logo.png" type="image/png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- JS Utils -->
+  <script src="./js/util.js" defer></script>
+  <script src="./js/render.js" defer></script>
+
+  <!-- Components -->
+  <script src="./js/components/header.js" defer></script>
+  <script src="./js/components/footer.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="wrapper">
+      
+      <!-- Header -->
+      <div id="header"></div>
+
+      <!-- Main content -->
+      <main class="main-content">
+        <h2>Select Your Role</h2>
+
+        <div class="role-selection">
+          <button id="adminBtn" onclick="selectRole('admin')">Admin</button>
+          <button id="doctorBtn" onclick="selectRole('doctor')">Doctor</button>
+          <button id="patientBtn" onclick="selectRole('patient')">Patient</button>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <div id="footer"></div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span id="closeModal" class="close-button">&times;</span>
+      <div id="modal-body">
+        <!-- Dynamic content will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JS Services -->
+  <script type="module" src="./js/services/index.js" defer></script>
+</body>
+</html>
