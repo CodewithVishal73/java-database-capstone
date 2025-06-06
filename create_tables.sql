@@ -105,15 +105,16 @@ INSERT INTO patient (address, email, name, password, phone) VALUES
 
 CREATE TABLE appointment (
     appointment_id INT AUTO_INCREMENT PRIMARY KEY,
-    patient_id INT,
-    doctor_id INT,
-    appointment_date DATE,
-    appointment_time TIME,
+    patient_id INT NOT NULL,
+    doctor_id INT NOT NULL,
+    appointment_date DATE NOT NULL,
+    appointment_time TIME NOT NULL,
     reason TEXT,
     status TINYINT(1) NOT NULL DEFAULT 1,
     FOREIGN KEY (patient_id) REFERENCES patient(patient_id),
     FOREIGN KEY (doctor_id) REFERENCES doctor(doctor_id)
 );
+
 
 INSERT INTO appointment (appointment_time, status, doctor_id, patient_id) VALUES
 ('2025-05-01 09:00:00.000000', 0, 1, 1),
