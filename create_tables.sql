@@ -72,8 +72,9 @@ CREATE TABLE patient (
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     phone VARCHAR(20),
-    date_of_birth DATE
+    address VARCHAR(255)
 );
+
 INSERT INTO patient (address, email, name, password, phone) VALUES
 ('101 Oak St, Cityville', 'jane.doe@example.com', 'Jane Doe', 'passJane1', '888-111-1111'),
 ('202 Maple Rd, Townsville', 'john.smith@example.com', 'John Smith', 'smithSecure', '888-222-2222'),
