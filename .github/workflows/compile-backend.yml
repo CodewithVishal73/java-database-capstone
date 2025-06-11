@@ -17,7 +17,7 @@ jobs:
 
       - name: Compile with Maven
         run: |
-          cd backend
+          cd back-end
           mvn clean compile
 
 
