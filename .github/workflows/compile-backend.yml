@@ -18,5 +18,6 @@ jobs:
       - name: Compile with Maven
         run: |
           cd app
-          ./mvnw clean compile
+          mvn clean compile
+
   
