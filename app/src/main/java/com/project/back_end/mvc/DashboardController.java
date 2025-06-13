@@ -1,6 +1,5 @@
-package com.example.demo.controller;
-
-import com.example.demo.service.TokenValidationService;
+package com.project.back_end.controllers;
+import com.project.back_end.services.TokenValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,11 +1,11 @@
-package com.project.back_end.service;
+package com.project.back_end.services;
 
-import com.project.back_end.entity.Doctor;
-import com.project.back_end.entity.Login;
-import com.project.back_end.entity.Appointment;
-import com.project.back_end.repository.DoctorRepository;
-import com.project.back_end.repository.AppointmentRepository;
-import com.project.back_end.security.TokenService;
+import com.project.back_end.models.Doctor;
+import com.project.back_end.dto.Login;
+import com.project.back_end.models.Appointment;
+import com.project.back_end.repo.DoctorRepository;
+import com.project.back_end.repo.AppointmentRepository;
+import com.project.back_end.services.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
@@ -95,7 +95,7 @@ public class DoctorService {
         Doctor doctor = doctorRepository.findByEmail(login.getEmail());
 
         if (doctor != null && doctor.getPassword().equals(login.getPassword())) {
-            String token = tokenService.generateToken(doctor.getId(), "doctor");
+            String token = tokenService.generateToken(email);
             response.put("token", token);
             response.put("message", "Login successful");
             return ResponseEntity.ok(response);

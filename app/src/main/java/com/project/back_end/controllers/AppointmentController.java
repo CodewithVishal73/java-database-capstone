@@ -1,8 +1,8 @@
-package com.project.back_end.controller;
+package com.project.back_end.controllers;
 
-import com.project.back_end.entity.Appointment;
-import com.project.back_end.service.AppointmentService;
-import com.project.back_end.service.Service;
+import com.project.back_end.models.Appointment;
+import com.project.back_end.services.AppointmentService;
+import com.project.back_end.services.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,10 +1,11 @@
 package com.project.back_end.dto;
 
+import com.project.back_end.models.Appointment;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-
-public class AppointmentDTO {
+public class AppointmentDTO{
 
     private Long id;
     private Long doctorId;
@@ -21,25 +22,23 @@ public class AppointmentDTO {
     private LocalTime appointmentTimeOnly;
     private LocalDateTime endTime;
 
-    // Constructor
-    public AppointmentDTO(Long id, Long doctorId, String doctorName, Long patientId,
-                          String patientName, String patientEmail, String patientPhone, String patientAddress,
-                          LocalDateTime appointmentTime, int status) {
-        this.id = id;
-        this.doctorId = doctorId;
-        this.doctorName = doctorName;
-        this.patientId = patientId;
-        this.patientName = patientName;
-        this.patientEmail = patientEmail;
-        this.patientPhone = patientPhone;
-        this.patientAddress = patientAddress;
-        this.appointmentTime = appointmentTime;
-        this.status = status;
+    // Constructor to map from Appointment entity
+    public AppointmentDTO(Appointment appointment) {
+        this.id = appointment.getId();
+        this.doctorId = appointment.getDoctor().getId();
+        this.doctorName = appointment.getDoctor().getName();
+        this.patientId = appointment.getPatient().getId();
+        this.patientName = appointment.getPatient().getName();
+        this.patientEmail = appointment.getPatient().getEmail();
+        this.patientPhone = appointment.getPatient().getPhone();
+        this.patientAddress = appointment.getPatient().getAddress();
+        this.appointmentTime = appointment.getAppointmentTime();
+        this.status = appointment.getStatus();
 
-        // Automatically compute derived fields
-        this.appointmentDate = appointmentTime.toLocalDate();
-        this.appointmentTimeOnly = appointmentTime.toLocalTime();
-        this.endTime = appointmentTime.plusHours(1);
+        // Derived fields
+        this.appointmentDate = appointment.getAppointmentDate();
+        this.appointmentTimeOnly = appointment.getAppointmentTimeOnly();
+        this.endTime = appointment.getEndTime();
     }
 
     // Getters
